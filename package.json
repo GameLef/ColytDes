@@ -1,6 +1,8 @@
 {
+  "name": "ColytDes",
   "private": true,
-  "author": "劳广强 <laoguangqiang@yuhuofei.it>",
+  "author": "ruby",
+  "version": "1.0.0",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",

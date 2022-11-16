@@ -1,16 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '@/models/Index/index.scss';
 import { Icon } from '@ricons/utils';
 import { Terminal } from '@ricons/tabler';
 import { Button, Space, Typography } from 'antd';
 import _ from 'lodash';
+import moment from 'moment';
 
 export default function HomePage() {
-  useEffect(() => {}, []);
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    getCurrentDate();
+  }, []);
 
   const formatText = (text: string): string[] => {
     const tempText = text.split('');
     return _.map(_.chunk(tempText, 36), (value) => value.join(''));
+  };
+
+  const getCurrentDate = () => {
+    setInterval((args) => {
+      setCurrentDate(moment().format('YYYY-MM-DD HH:mm:ss'));
+    }, 250);
   };
 
   return (
@@ -34,6 +45,14 @@ export default function HomePage() {
               </Space>
             </div>
           </Space>
+        </div>
+
+        <Typography.Title level={2} style={{ textAlign: 'center', marginTop: 40 }}>
+          - 小站介绍 -
+        </Typography.Title>
+
+        <div className={styles['code']}>
+          <Typography.Text style={{ textAlign: 'justify' }}>{`小破站为2022年11月11日正式成立。`}</Typography.Text>
         </div>
       </div>
 
@@ -81,7 +100,11 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className={styles['base-right']}></div>
+      <div className={styles['base-right']}>
+        <div className={styles['clock']}>
+          <div className={styles['clock-time']}>{currentDate}</div>
+        </div>
+      </div>
     </div>
   );
 }

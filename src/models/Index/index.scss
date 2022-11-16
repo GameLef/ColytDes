@@ -8,6 +8,11 @@
   src: url('@/assets/fonts/JetBrainsMono-Medium.ttf');
 }
 
+@font-face {
+  font-family: 'DIGIB';
+  src: url('@/assets/fonts/DS-DIGIB-2.ttf');
+}
+
 .wrapper {
   $width: 1600px;
 
@@ -33,6 +38,7 @@
   &-right {
     $width: 400px;
     flex-basis: $width;
+    padding: 0 16px;
   }
 }
 
@@ -120,12 +126,12 @@
 }
 
 .user-info {
-  background-color: #d6eeee;
+  background-color: #fcffff;
   width: 100%;
   padding: 22px 0;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 8px 0px #c7ceff;
+  box-shadow: 0 0 8px 0 #c7ceff;
 
   display: flex;
   justify-content: center;
@@ -168,5 +174,29 @@
     padding: 2px 8px;
     background-color: #eaf5ff;
     border-radius: 6px;
+  }
+}
+
+.code {
+  background-color: #f8ffff;
+  border-radius: 8px;
+  box-shadow: 0 0 4px 0 #aab3ff;
+  overflow: hidden;
+  padding: 8px 12px;
+}
+
+.clock {
+  background-color: #fcffff;
+  width: 100%;
+  padding: 22px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 0 #c7ceff;
+
+  &-time {
+    font-family: 'DIGIB';
+    font-size: 36px;
+    text-align: center;
+    color: #7cc0ff;
   }
 }
